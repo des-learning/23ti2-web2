@@ -1,14 +1,10 @@
 <html>
   <body>
   <?php
-    $nama = $_GET['nama'];
-    if ($nama) {
-      echo "<h1>Hello $nama</h1>";
-    } else {
-      echo "<h1>Hello World</h1>";
-    }
+    $nama = $_POST['nama'] ?? 'World';
+    echo "<h1>Hello $nama</h1>";
   ?>
-  <form method="GET" action="hello.php">
+  <form method="POST" action="hello-post.php">
     <div>
       <label>Nama:</label>
       <input type="text" name="nama" />
