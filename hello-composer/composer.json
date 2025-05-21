@@ -12,5 +12,7 @@
             "email": "desdulianto@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.21"
+    }
 }
