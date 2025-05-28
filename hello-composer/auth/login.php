@@ -1,6 +1,8 @@
 <?php
+
 require '../vendor/autoload.php';
 use Uph\Hello\Twig;
+
 $twig = Twig::make(__DIR__ . '/templates');
 session_start();
 
@@ -12,10 +14,16 @@ if (!$username || !$password) {
 }
 
 if ($username !== 'user' || $password !== 'rahasia') {
-    echo $twig->render('login.html.twig', ['error' => 'Login salah']);
+    echo $twig->render(
+        'login.html.twig',
+        [
+        'username' => $username, 'error' => 'Login salah'
+        ]
+    );
     die();
 }
 
 session_regenerate_id();
 $_SESSION['authenticated'] = true;
-header('Location: index.php');
+header('Location: /auth/index.php');
+
