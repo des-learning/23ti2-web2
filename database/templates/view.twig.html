@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <div>
+            <div>
+                <span>ID:</span>
+                <span>{{ todo.id }}</span>
+            </div>
+            <div>
+                <span>Task:</span>
+                <span>{{ todo.task }}</span>
+            </div>
+            <div>
+                <span>Status:</span>
+                <span>{{ todo.status }}</span>
+            </div>
+            <div>
+                <span>Created At:</span>
+                <span>{{ todo.created_at }}</span>
+            </div>
+            <div>
+                <span>Updated At:</span>
+                <span>{{ todo.updated_at }}</span>
+            </div>
+        </div>
+        <div>
+            <a href="list.php">Back</a>
+            <button onclick="hapus()">Hapus</button>
+        </div>
+        <script>
+            function hapus() {
+                if (confirm('Are you sure?')) {
+                    window.location.href = "delete.php?id={{todo.id}}";
+                }
+            }
+        </script>
+    </body>
+</html>
