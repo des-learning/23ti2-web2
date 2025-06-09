@@ -1,0 +1,21 @@
+<html>
+ <body>
+  <form method="post" action="{{action}}">
+   <div>
+    <label>Task</label>
+    <input type="text" name="task" value="{{task}}" />
+   </div>
+   <div>
+    <label>Status</label>
+    <select name="status">
+     <option value="todo" {% if status == 'todo' %}selected{% endif %}>Todo</option>
+     <option value="inprogress" {% if status == 'inprogress' %}selected{% endif %}>In Progress</option>
+     <option value="done" {% if status == 'done' %}selected{% endif %}>Done</option>
+    </select>
+   </div>
+   <div>
+    <input type="submit" value="Simpan" />
+   </div>
+  </form>
+ </body>
+</html>
