@@ -4,6 +4,18 @@
         <div>
             <a href="create.php">Create New</a>
         </div>
+        <div>
+            <form method="get" action="list.php">
+                <input type="text" name="search_task" value="{{ search_task }}" />
+                <select name="search_status">
+                    <option value="" {% if search_status == '' %}selected{% endif %}>Any</option>
+                    <option value="todo" {% if search_status == 'todo' %}selected{% endif %}>Todo</option>
+                    <option value="inprogress" {% if search_status == 'inprogress' %}selected{% endif %}>In Progress</option>
+                    <option value="done" {% if search_status == 'done' %}selected{% endif %}>Done</option>
+                </select>
+                <input type="submit" value="filter" />
+            </form>
+        </div>
         <table>
             <tr>
                 <th>ID</th>
