@@ -2,37 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
     public function index() {
-        $books = [
-          [
-            'id' => 1,
-            'title' => 'The AI Revolution',
-            'author' => 'Jane Smith',
-          ],
-          [
-            'id' => 2,
-            'title' => 'The AI Revolution',
-            'author' => 'Jane Smith',
-          ],
-          [
-            'id' => 3,
-            'title' => 'The AI Revolution',
-            'author' => 'Jane Smith',
-          ],
-          [
-            'id' => 4,
-            'title' => 'The AI Revolution',
-            'author' => 'Jane Smith',
-          ],
-        ];
+        $books = Book::limit(4)->get();
         return view('homepage.index', ['books' => $books]);
     }
 
     public function book(int $id) {
-        return view('homepage.book');
+        $book = Book::findOrFail($id);
+        return view('homepage.book', ['book' => $book]);
     }
 }

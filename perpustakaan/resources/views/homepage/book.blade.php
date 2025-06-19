@@ -23,19 +23,19 @@
 
       <!-- Book Information -->
       <div class="w-full md:w-2/3 space-y-4">
-        <h2 class="text-3xl font-bold">The AI Revolution</h2>
+        <h2 class="text-3xl font-bold">{{ $book->title }}</h2>
 
         <div class="space-y-1 text-sm">
-          <p><span class="font-semibold">Author:</span> Jane Smith</p>
-          <p><span class="font-semibold">Published Year:</span> 2024</p>
-          <p><span class="font-semibold">Category:</span> Non-Fiction</p>
-          <p><span class="font-semibold">ISBN:</span> 978-1-23456-789-0</p>
+          <p><span class="font-semibold">Author:</span> {{ $book->author }}</p>
+          <p><span class="font-semibold">Published Year:</span> {{ $book->published_year}}</p>
+          <p><span class="font-semibold">Category:</span> {{ $book->category }}</p>
+          <p><span class="font-semibold">ISBN:</span> {{ $book->isbn }}</p>
         </div>
 
         <div>
           <h3 class="text-lg font-semibold mt-4 mb-2">Excerpt</h3>
           <p class="text-gray-700 text-sm leading-relaxed">
-            "Artificial Intelligence has already begun to shape the world around us. From self-driving cars to predictive healthcare algorithms, AI is no longer just a concept of the future. In this book, we explore its foundations, applications, and ethical implications for humanity."
+            "{{ $book->excerpt }}"
           </p>
         </div>
       </div>
