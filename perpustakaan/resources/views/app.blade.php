@@ -8,9 +8,24 @@
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
   <header class="bg-blue-800 text-white p-6">
-    <div class="container mx-auto">
-      <h1 class="text-3xl font-bold">City Library</h1>
-      <p class="text-sm">Explore, Learn, and Grow</p>
+    <div class="flex">
+      <div class="flex-auto container mx-auto">
+        <h1 class="text-3xl font-bold">City Library</h1>
+        <p class="text-sm">Explore, Learn, and Grow</p>
+      </div>
+      @auth
+      <div class="flex-1">
+        <form method="post" action="{{ route('logout') }}">
+          @csrf
+          <button 
+        type="submit" 
+        class="w-full rounded-xl bg-orange-600 text-white font-semibold p-3 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+        Logout
+      </button>
+
+        </form>
+      </div>
+      @endauth
     </div>
   </header>
 
