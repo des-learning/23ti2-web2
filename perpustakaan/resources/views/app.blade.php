@@ -15,7 +15,7 @@
       </div>
       @auth
       <div class="flex-1">
-        <x-auth-button :action="route('logout')" method="post" csrf=true>Logout</x-auth-button>
+        <x-auth-button :action="route('logout')" method="post" :csrf="true">Logout</x-auth-button>
       </div>
       @endauth
 
