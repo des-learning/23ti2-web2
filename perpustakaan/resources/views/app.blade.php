@@ -15,17 +15,15 @@
       </div>
       @auth
       <div class="flex-1">
-        <form method="post" action="{{ route('logout') }}">
-          @csrf
-          <button 
-        type="submit" 
-        class="w-full rounded-xl bg-orange-600 text-white font-semibold p-3 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-        Logout
-      </button>
-
-        </form>
+        <x-auth-button :action="route('logout')" method="post" csrf=true>Logout</x-auth-button>
       </div>
       @endauth
+
+      @guest
+      <div class="flex-1">
+        <x-auth-button :action="route('login')" method="get">Login</x-auth-button>
+      </div>
+      @endguest
     </div>
   </header>
 

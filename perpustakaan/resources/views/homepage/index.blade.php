@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Library Homepage</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-  <header class="bg-blue-800 text-white p-6">
-    <div class="container mx-auto">
-      <h1 class="text-3xl font-bold">City Library</h1>
-      <p class="text-sm">Explore, Learn, and Grow</p>
-    </div>
-  </header>
+@extends('app')
 
-  <main class="container mx-auto p-6 space-y-10">
+@section('content')
     <!-- Latest Books -->
     <section>
       <h2 class="text-2xl font-semibold mb-4 border-b pb-2">📚 Latest Books</h2>
@@ -75,10 +61,4 @@
         <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-600">Register</button>
       </form>
     </section>
-  </main>
-
-  <footer class="bg-blue-800 text-white text-center p-4 mt-10">
-    &copy; 2025 City Library. All rights reserved.
-  </footer>
-</body>
-</html>
+@endsection

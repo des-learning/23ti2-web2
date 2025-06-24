@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Detail</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+@extends('app')
 
-  <header class="bg-blue-800 text-white p-6">
-    <div class="container mx-auto">
-      <h1 class="text-2xl font-bold">Book Detail</h1>
-    </div>
-  </header>
-
-  <main class="container mx-auto p-6">
+@section('content')
     <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6">
       <!-- Book Cover -->
       <div class="w-full md:w-1/3">
@@ -40,10 +26,4 @@
         </div>
       </div>
     </div>
-  </main>
-
-  <footer class="bg-blue-800 text-white text-center p-4 mt-10">
-    &copy; 2025 City Library. All rights reserved.
-  </footer>
-</body>
-</html>
+@endsection
