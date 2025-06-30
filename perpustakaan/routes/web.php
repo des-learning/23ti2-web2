@@ -44,5 +44,9 @@ function categoryAdminRoutes(): RouteRegistrar
             Route::get('/', 'index')->name('index');
             Route::get('/create', 'create')->name('create');
             Route::post('/create', 'store')->name('store');
+            Route::get('/{id}', 'show')->name('show');
+            Route::delete('/{id}', 'destroy')->name('destroy');
+            Route::get('/edit/{id}', 'edit')->name('edit');
+            Route::post('/edit/{id}', 'update')->name('update');
         });
 }

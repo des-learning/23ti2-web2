@@ -6,7 +6,7 @@
     @csrf
     <div>
         <label>Name</label>
-        <input type="text" name="name" value="{{ $category->name }}" />
+        <input type="text" name="name" value="{{ old('name') ?? $category->name }}" />
         @error('name')
         <p class="text-red-500">{{ $message  }}</p>
         @enderror
