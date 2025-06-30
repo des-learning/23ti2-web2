@@ -23,7 +23,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.form', [
+            'formHeading' => 'New Category',
+            'action' => route('admin.category.store'),
+            'category' => new Category(),
+        ]);
     }
 
     /**
@@ -31,7 +35,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required'],
+        ]);
+
+        Category::create($validated);
+
+        return redirect(route('admin.category.index'));
     }
 
     /**

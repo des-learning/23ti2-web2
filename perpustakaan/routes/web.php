@@ -42,5 +42,7 @@ function categoryAdminRoutes(): RouteRegistrar
         ->name('category.')
         ->group(function() {
             Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/create', 'store')->name('store');
         });
 }
